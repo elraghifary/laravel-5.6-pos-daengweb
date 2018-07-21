@@ -10,6 +10,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('created_at', 'DESC')->paginate(10);
+
         return view('categories.index', compact('categories'));
     }
 
@@ -26,6 +27,7 @@ class CategoryController extends Controller
             ], [
                 'description' => $request->description
             ]);
+
             return redirect()->back()->with(['success' => 'Category: ' . $categories->name . ' has been submitted.']);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -35,6 +37,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $categories = Category::findOrFail($id);
+
         return view('categories.edit', compact('categories'));
     }
 
@@ -51,6 +54,7 @@ class CategoryController extends Controller
                 'name' => $request->name,
                 'description' => $request->description
             ]);
+
             return redirect(route('category.index'))->with(['success' => 'Category: ' . $categories->name . ' has been modified.']);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -60,7 +64,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $categories = Category::findOrFail($id);
+
         $categories->delete();
+        
         return redirect()->back()->with(['success' => 'Category: ' . $categories->name . ' was deleted.']);
     }
 }

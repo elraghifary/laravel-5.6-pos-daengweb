@@ -12,12 +12,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('created_at', 'DESC')->paginate(10);
+
         return view('users.index', compact('users'));
     }
 
     public function create()
     {
         $role = Role::orderBy('name', 'ASC')->get();
+
         return view('users.create', compact('role'));
     }
 
@@ -46,6 +48,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
+
         return view('users.edit', compact('user'));
     }
 
@@ -58,7 +61,9 @@ class UserController extends Controller
         ]);
 
         $user = User::findOrFail($id);
+
         $password = !empty($request->password) ? bcrypt($request->password):$user->password;
+
         $user->update([
             'name' => $request->name,
             'password' => $password
@@ -69,14 +74,18 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
+
         $user->delete();
+
         return redirect()->back()->with(['success' => 'User: <strong>' . $user->name . '</strong> was deleted.']);
     }
 
     public function roles(Request $request, $id)
     {
         $user = User::findOrFail($id);
+
         $roles = Role::all()->pluck('name');
+
         return view('users.roles', compact('user', 'roles'));
     }
 
@@ -85,25 +94,34 @@ class UserController extends Controller
         $this->validate($request, [
             'role' => 'required'
         ]);
+
         $user = User::findOrFail($id);
+
         $user->syncRoles($request->role);
-        return redirect()->back()->with(['success' => 'Role Sudah Di Set']);
+
+        return redirect()->back()->with(['success' => 'role has been set.']);
     }
 
     public function rolePermission(Request $request)
     {
         $role = $request->get('role');
+
         $permissions = null;
         $hasPermission = null;
+
         $roles = Role::all()->pluck('name');
+
         if (!empty($role)) {
             $getRole = Role::findByName($role);
+
             $hasPermission = DB::table('role_has_permissions')
                 ->select('permissions.name')
                 ->join('permissions', 'role_has_permissions.permission_id', '=', 'permissions.id')
                 ->where('role_id', $getRole->id)->get()->pluck('name')->all();
+
             $permissions = Permission::all()->pluck('name');
         }
+
         return view('users.role_permission', compact('roles', 'permissions', 'hasPermission'));
     }
 
@@ -112,16 +130,20 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|string|unique:permissions'
         ]);
+
         $permission = Permission::firstOrCreate([
             'name' => $request->name
         ]);
+
         return redirect()->back();
     }
 
     public function setRolePermission(Request $request, $role)
     {
         $role = Role::findByName($role);
+
         $role->syncPermissions($request->permission);
-        return redirect()->back()->with(['success' => 'Permission to Role Saved!']);
+
+        return redirect()->back()->with(['success' => 'Permission to role saved.']);
     }
 }

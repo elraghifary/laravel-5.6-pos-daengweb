@@ -9,6 +9,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::orderBy('created_at', 'DESC')->paginate(10);
+
         return view('roles.index', compact('roles'));
     }
 
@@ -26,6 +27,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         $roles = Role::findOrFail($id);
+        
         $roles->delete();
 
         return redirect()->back()->with(['success' => 'Role: <strong>' . $roles->name . '</strong> was deleted.']);

@@ -13,12 +13,14 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('category')->orderBy('created_at', 'DESC')->paginate(10);
+
         return view('products.index', compact('products'));
     }
 
     public function create()
     {
         $categories = Category::orderBy('name', 'ASC')->get();
+
         return view('products.create', compact('categories'));
     }
 
@@ -43,7 +45,6 @@ class ProductController extends Controller
                 $photo = $this->saveFile($request->name, $request->file('photo'));
             }
 
-     
             // store data to table products
             $products = Product::create([
                 'code' => $request->code,
@@ -67,17 +68,22 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $products = Product::findOrFail($id);
+
         if (!empty($products->photo)) {
             File::delete(public_path('uploads/product/' . $products->photo));
         }
+
         $products->delete();
+
         return redirect()->back()->with(['success' => '<strong>' . $products->name . '</strong> was deleted.']);
     }
 
     public function edit($id)
     {
         $products = Product::findOrFail($id);
+
         $categories = Category::orderBy('name', 'ASC')->get();
+
         return view('products.edit', compact('products', 'categories'));
     }
 
@@ -95,6 +101,7 @@ class ProductController extends Controller
 
         try {
             $products = Product::findOrFail($id);
+            
             $photo = $products->photo;
 
             // check if photo exist then delete and add a new one
