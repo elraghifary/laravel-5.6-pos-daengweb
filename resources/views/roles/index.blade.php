@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                         <li class="breadcrumb-item active">Role</li>
                     </ol>
                 </div>
@@ -27,10 +27,7 @@
                 <div class="col-md-4">
                     @card
                         @slot('card_title')
-                            <a href="#" 
-                                class="btn btn-primary btn-sm">
-                                <i class="fa fa-plus"></i> Add
-                            </a>
+                            Add
                         @endslot
                         
                         @if (session('success'))
@@ -58,7 +55,7 @@
                 <div class="col-md-8">
                     @card
                         @slot('card_title')
-                        List Role
+                        Role List
                         @endslot
                         
                         @if (session('success'))
@@ -75,7 +72,7 @@
                                         <td>Role</td>
                                         <td>Guard</td>
                                         <td>Created At</td>
-                                        <td>Aksi</td>
+                                        <td>Action</td>
                                     </tr>
                                 </thead>
                                 <tbody>
