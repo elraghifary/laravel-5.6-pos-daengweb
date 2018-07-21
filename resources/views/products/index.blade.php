@@ -92,9 +92,9 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                            {{-- <div class="float-right">
+                            <div class="float-right">
                                 {!! $products->links() !!}
-                            </div> --}}
+                            </div>
                         </div>
                         @slot('card_footer')
 ​
