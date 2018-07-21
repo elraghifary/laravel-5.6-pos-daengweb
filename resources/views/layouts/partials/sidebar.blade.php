@@ -66,7 +66,7 @@
                             <p>Product</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item has-treeview">
+                    <li class="nav-item has-treeview">
                         <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -79,7 +79,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                    </li> --}}
+                    </li>
                 </ul>
             </li>
         </ul>
