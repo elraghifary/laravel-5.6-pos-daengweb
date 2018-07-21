@@ -11,15 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return redirect(route('login'));
 });
 
-Route::resource('/category', 'CategoryController')->except([
-    'create', 'show'
-]);
-
-Route::resource('/product', 'ProductController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::resource('/category', 'CategoryController')->except([
+        'create', 'show'
+    ]);
+
+    Route::resource('/product', 'ProductController');
+    
+});
