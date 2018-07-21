@@ -69,7 +69,7 @@ class UserController extends Controller
             'password' => $password
         ]);
 
-        return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> has been modified.']);
+        return redirect(route('user.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> has been modified.']);
     }
     public function destroy($id)
     {
@@ -99,7 +99,7 @@ class UserController extends Controller
 
         $user->syncRoles($request->role);
 
-        return redirect()->back()->with(['success' => 'role has been set.']);
+        return redirect()->back()->with(['success' => 'Role has been set.']);
     }
 
     public function rolePermission(Request $request)

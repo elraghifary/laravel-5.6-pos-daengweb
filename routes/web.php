@@ -18,27 +18,37 @@ Route::get('/', function() {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::put('/user/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::put('/user/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
 
-    Route::post('/user/permission', 'UserController@addPermission')->name('users.add_permission');
+        Route::post('/user/permission', 'UserController@addPermission')->name('users.add_permission');
 
-    Route::get('/user/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
+        Route::get('/user/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
 
-    Route::resource('/user', 'UserController')->except([
-        'show'
-    ]);
+        Route::resource('/user', 'UserController')->except([
+            'show'
+        ]);
 
-    Route::get('/user/roles/{id}', 'UserController@roles')->name('user.roles');
+        Route::get('/user/roles/{id}', 'UserController@roles')->name('users.roles');
 
-    Route::resource('/role', 'RoleController')->except([
-        'create', 'show', 'edit', 'update'
-    ]);
+        Route::put('/user/roles/{id}', 'UserController@setRole')->name('users.set_role');
 
-    Route::resource('/category', 'CategoryController')->except([
-        'create', 'show'
-    ]);
+        Route::resource('/role', 'RoleController')->except([
+            'create', 'show', 'edit', 'update'
+        ]);
+    });
 
-    Route::resource('/product', 'ProductController');
+    Route::group(['middleware' => ['permission:show products|create products|delete products']], function() {
+        Route::resource('/category', 'CategoryController')->except([
+            'create', 'show'
+        ]);
+
+        Route::resource('/product', 'ProductController');
+    });
+
+    Route::group(['middleware' => ['role:cashier']], function() {
+        
+    });
 
     Route::get('/home', 'HomeController@index')->name('home');
 });

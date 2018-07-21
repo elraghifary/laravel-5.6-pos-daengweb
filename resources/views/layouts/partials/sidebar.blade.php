@@ -22,6 +22,7 @@
                     <p>Dashboard</p>
                 </a>
             </li>
+            @role('admin')
             <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-users"></i>
@@ -51,6 +52,9 @@
                     </li>
                 </ul>
             </li>
+            @endrole
+
+            @if (auth()->user()->can('show products') || auth()->user()->can('delete products') || auth()->user()->can('create products') || auth()->user()->can('edit products'))
             <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-dashboard"></i>
@@ -88,6 +92,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
         </ul>
     </nav>
 </div>
