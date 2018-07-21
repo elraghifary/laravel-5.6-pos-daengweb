@@ -80,7 +80,7 @@
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
-                                    @forelse ($role as $row)
+                                    @forelse ($roles as $row)
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $row->name }}</td>
@@ -104,7 +104,7 @@
                         </div>
 ​
                         <div class="float-right">
-                            {!! $role->links() !!}
+                            {!! $roles->links() !!}
                         </div>
                         @slot('card_footer')
 ​
