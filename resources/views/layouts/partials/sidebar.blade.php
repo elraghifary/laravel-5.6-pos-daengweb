@@ -22,7 +22,7 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item has-treeview">
+            {{-- <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-users"></i>
                     <p>
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fa fa-dashboard"></i>
@@ -60,7 +60,7 @@
                             <p>Category</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('product.index') }}" class="nav-link">
                             <i class="fa fa-circle-o nav-icon"></i>
                             <p>Product</p>
@@ -79,7 +79,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
         </ul>
