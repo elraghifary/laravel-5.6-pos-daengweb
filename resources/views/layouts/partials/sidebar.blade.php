@@ -60,13 +60,13 @@
                             <p>Category</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="{{ route('product.index') }}" class="nav-link">
                             <i class="fa fa-circle-o nav-icon"></i>
                             <p>Product</p>
                         </a>
                     </li>
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview">
                         <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
