@@ -1,0 +1,143 @@
+[33mcommit 6e2d00b31f435cdb9a298600e6e8291ae50c5378[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:21:47 2018 +0700
+
+    install intervention/image
+
+[33mcommit 7285d50da7c546db0a7be578d3b019b9d3fed8c5[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:10:26 2018 +0700
+
+    add product menu on sidebar
+
+[33mcommit 79e05261909fbab68d66630acc73c965fecf1269[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:09:03 2018 +0700
+
+    add product route
+
+[33mcommit 880cfee2c1b32777f6382598c08ffb9f07ab67b3[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:07:46 2018 +0700
+
+    add product view
+
+[33mcommit 06c17d7d0395622d8c22f2a7339e678ae05c639c[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:07:11 2018 +0700
+
+    add product controller
+
+[33mcommit 6ae976369d47a51f442b7a4345a0cd1b64e7d48f[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 21:03:44 2018 +0700
+
+    add field photo to product
+
+[33mcommit ac1841c397a87bc5b1057df9827d03b77ddb2c4e[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 20:13:37 2018 +0700
+
+    modify category model
+
+[33mcommit 7e96619ad41fae76a2071b1e92621a0e2b1aaa3e[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 20:06:48 2018 +0700
+
+    add component card and alert
+
+[33mcommit c2deba49a16fb3c25d59c3004432038315e6d2ba[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 20:04:14 2018 +0700
+
+    modify menus on sidebar
+
+[33mcommit d91d9bb9190e1e3a3c2bc8d1011dfee9d0a5a76c[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 20:00:13 2018 +0700
+
+    add category route
+
+[33mcommit 9fdf2f442d8df992e18325644d65bf4f0cc97c0a[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:59:05 2018 +0700
+
+    add category view
+
+[33mcommit 68321d6da4d692d8616fa934bd472dc09db918a8[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:57:15 2018 +0700
+
+    add category controller
+
+[33mcommit b9507de22b1874c86a655a9a81f227f7e6ec0b14[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:54:58 2018 +0700
+
+    add layout view
+
+[33mcommit 1c21dca1b4a458699c3f6fba6e2af75cc6332ba7[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:51:47 2018 +0700
+
+    add AdminLTE template
+
+[33mcommit bcc5e0fd55a5f5351e8801fba730120cb532c573[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:46:03 2018 +0700
+
+    add relationship to order detail
+
+[33mcommit 1ce2f0a66ee1c0d49d8fb2376b2e72b66c0d592c[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:44:53 2018 +0700
+
+    add relationship to order
+
+[33mcommit d0c43dd6f8d20b9c61f105e3b3816905f05054d9[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:43:16 2018 +0700
+
+    add relationship to product
+
+[33mcommit 4392a3b720b5560760d4e4b0013222f92c6686b7[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:41:59 2018 +0700
+
+    install doctrine/dbal
+
+[33mcommit 9ec4e8c562d4d2f45c318b7b84a38317e205d183[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:36:45 2018 +0700
+
+    add order detail model and migration
+
+[33mcommit 320932932512767072433b1a5ad3f0ba7b268590[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:36:01 2018 +0700
+
+    add order model and migration
+
+[33mcommit ecba3001719fecb72e336bd71efebc39783dfdec[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:35:16 2018 +0700
+
+    add customer model and migration
+
+[33mcommit 592e4ba2c8ae904f020d037290d0c40563fd5184[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:33:45 2018 +0700
+
+    add product model and migration
+
+[33mcommit 277d995654c157610b0d1bd615350849f48b2be4[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:32:34 2018 +0700
+
+    add category model and migration
+
+[33mcommit fde6b834cae5dabf8b9392cd22ff9a9ef533d476[m
+Author: Elra Ghifary <elraghifary@gmail.com>
+Date:   Sat Jul 21 19:19:39 2018 +0700
+
+    first commit
