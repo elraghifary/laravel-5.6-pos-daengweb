@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                         <li class="breadcrumb-item active">User</li>
                     </ol>
                 </div>
@@ -44,11 +44,11 @@
                                 <thead>
                                     <tr>
                                         <td>#</td>
-                                        <td>Nama</td>
+                                        <td>Name</td>
                                         <td>Email</td>
                                         <td>Role</td>
                                         <td>Status</td>
-                                        <td>Aksi</td>
+                                        <td>Action</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -65,7 +65,7 @@
                                         </td>
                                         <td>
                                             @if ($row->status)
-                                            <label class="badge badge-success">Aktif</label>
+                                            <label class="badge badge-success">Active</label>
                                             @else
                                             <label for="" class="badge badge-default">Suspend</label>
                                             @endif
