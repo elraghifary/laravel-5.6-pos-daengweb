@@ -18,6 +18,9 @@ Route::get('/', function() {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::resource('/role', 'RoleController')->except([
+        'create', 'show', 'edit', 'update'
+    ]);
 
     Route::resource('/category', 'CategoryController')->except([
         'create', 'show'
@@ -26,5 +29,4 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/product', 'ProductController');
 
     Route::get('/home', 'HomeController@index')->name('home');
-    
 });
