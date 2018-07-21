@@ -43,6 +43,12 @@
                             <p>Users</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('users.roles_permission') }}" class="nav-link">
+                            <i class="fa fa-circle-o nav-icon"></i>
+                            <p>Role Permission</p>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item has-treeview menu-open">
