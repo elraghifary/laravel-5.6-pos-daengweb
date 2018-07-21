@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('/category', 'CategoryController')->except([
     'create', 'show'
 ]);
+
+Route::resource('/product', 'ProductController');
