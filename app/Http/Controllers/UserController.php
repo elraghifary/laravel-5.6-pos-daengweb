@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $user->assignRole($request->role);
 
-        return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> has been submitted.']);
+        return redirect(route('user.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> has been submitted.']);
     }
 
     public function edit($id)
@@ -117,7 +117,7 @@ class UserController extends Controller
         ]);
         return redirect()->back();
     }
-    
+
     public function setRolePermission(Request $request, $role)
     {
         $role = Role::findByName($role);

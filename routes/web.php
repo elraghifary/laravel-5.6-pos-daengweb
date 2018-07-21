@@ -18,6 +18,12 @@ Route::get('/', function() {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::resource('/user', 'UserController')->except([
+        'show'
+    ]);
+
+    Route::get('/user/roles/{id}', 'UserController@roles')->name('user.roles');
+
     Route::resource('/role', 'RoleController')->except([
         'create', 'show', 'edit', 'update'
     ]);
